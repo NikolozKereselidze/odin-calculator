@@ -7,6 +7,7 @@ main {
 }
 
 .calculator {
+  width: 260px;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -24,6 +25,8 @@ main {
   border: 2px #333 solid;
   border-radius: 5px;
   margin-bottom: 8px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .screen-current {
