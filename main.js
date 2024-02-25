@@ -104,4 +104,9 @@ clearButton.addEventListener("click", clearCalculator);
 // Add event listener for delete button
 deleteButton.addEventListener("click", () => {
   currentScreen.textContent = currentScreen.textContent.slice(0, -1);
+  if (selectedOperation) {
+    secondNumber = secondNumber.slice(0, -1);
+  } else {
+    firstNumber = firstNumber.slice(0, -1);
+  }
 });
