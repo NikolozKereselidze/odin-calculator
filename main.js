@@ -1,70 +1,7 @@
-// numberButtons.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     if (currentScreen.textContent === "0") {
-//       currentScreen.textContent = button.textContent;
-//     } else {
-//       currentScreen.textContent += button.textContent;
-//     }
-
-//     if (selectedOperation === null) firstNumber += button.textContent;
-//     else if (secondNumber === "") {
-//       secondNumber = button.textContent;
-//       currentScreen.textContent = secondNumber;
-//     } else {
-//       secondNumber += button.textContent;
-//       console.log(secondNumber);
-//     }
-//   });
-// });
-
-// operatorButtons.forEach((operator) => {
-//   operator.addEventListener("click", () => {
-//     if (firstNumber) {
-//       selectedOperation = operator.textContent;
-//     } else return;
-//   });
-// });
-
-// equalsButton.addEventListener("click", () => {
-//   executeOperation(firstNumber, secondNumber, selectedOperation);
-// });
-
-// const executeOperation = function (
-//   firstNumber,
-//   secondNumber,
-//   selectedOperation
-// ) {
-//   if (firstNumber && secondNumber) {
-//     if (selectedOperation === "+") add(firstNumber, secondNumber);
-//     else if (selectedOperation === "-") subtract(firstNumber, secondNumber);
-//     else if (selectedOperation === "*") multiply(firstNumber, secondNumber);
-//     else if (selectedOperation === "/") divide(firstNumber, secondNumber);
-//   }
-// };
-
-// const add = function (firstNumber, secondNumber) {
-//   currentScreen.textContent = Number(firstNumber) + Number(secondNumber);
-//   firstNumber = "";
-//   secondNumber = "";
-//   selectedOperation = null;
-// };
-
-// const substract = function (firstNumber, secondNumber) {
-//   currentScreen.textContent = Number(firstNumber) - Number(secondNumber);
-// };
-
-// const multiply = function (firstNumber, secondNumber) {
-//   currentScreen.textContent = Number(firstNumber) * Number(secondNumber);
-// };
-
-// const divide = function (firstNumber, secondNumber) {
-//   currentScreen.textContent = Number(firstNumber) / Number(secondNumber);
-// };
-
 "use strict";
 
-let firstNumber = 0;
-let secondNumber = 0;
+let firstNumber = "";
+let secondNumber = "";
 let selectedOperation = null;
 const currentScreen = document.querySelector(".screen-current");
 
@@ -88,9 +25,9 @@ function handleNumberClick(button) {
   const value = button.textContent;
   updateScreen(value);
   if (selectedOperation === null) {
-    firstNumber = parseFloat(value);
+    firstNumber += value;
   } else {
-    secondNumber = parseFloat(value);
+    secondNumber += value;
     currentScreen.textContent = `${firstNumber} ${selectedOperation} ${secondNumber}`;
   }
 }
