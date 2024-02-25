@@ -97,6 +97,11 @@ function handleNumberClick(button) {
 
 // Function to handle operator button clicks
 function handleOperatorClick(operator) {
+  if (firstNumber && operator && secondNumber) {
+    executeOperation();
+    // currentScreen.textContent = `${firstNumber} ${selectedOperation} ${secondNumber}`;
+  }
+
   if (firstNumber) {
     selectedOperation = operator.textContent;
     currentScreen.textContent = `${firstNumber} ${selectedOperation}`;
